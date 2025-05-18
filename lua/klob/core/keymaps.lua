@@ -38,3 +38,10 @@ vim.keymap.set({"i", "s"}, "<S-Tab>", function()
     return "<S-Tab>"
   end
 end, { expr = true, silent = true })
+
+-- Fast window switching
+vim.keymap.set("n", "<leader>h", "<C-w>h", { desc = "Left window" })
+vim.keymap.set("n", "<leader>l", "<C-w>l", { desc = "Right window" })
+
+-- Quick input file edit
+vim.keymap.set("n", "<leader>i", ":vsplit test<cr>", { desc = "Edit input" })
