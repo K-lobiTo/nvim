@@ -1,6 +1,6 @@
 require("klob.core")
-require("klob.plugins")
 require("klob.lazy")
+require("klob.plugins")
 
 vim.opt.termguicolors = true;
 
