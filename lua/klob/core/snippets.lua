@@ -13,5 +13,12 @@ ls.add_snippets("all", {
       i(1),
       t("<<endl;"),
   }),
+  s("fora",{
+      t("for(auto &"),
+      i(1, "e"),
+      t(":"),
+      i(2, "ans"),
+      t(")"),
+  }),
 })
 
