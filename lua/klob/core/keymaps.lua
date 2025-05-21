@@ -21,6 +21,8 @@ vim.api.nvim_set_keymap('i', '<F8>', '<ESC>:w<CR>:!g++ -fsanitize=address -std=c
 vim.api.nvim_set_keymap('n', '<F7>', '<ESC>:w<CR>:!g++ -fsanitize=address -std=c++23 -Wall -Wextra -Wshadow -O2 -o %< % && ./%< < test<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<F7>', '<ESC>:w<CR>:!g++ -fsanitize=address -std=c++23 -Wall -Wextra -Wshadow -O2 -o "%<" "%" && "./%<" < test<CR>', { noremap = true, silent = true })
 
+
+
 -- Expand or jump in insert mode
 vim.keymap.set({"i", "s"}, "<Tab>", function()
   if require("luasnip").expand_or_jumpable() then
@@ -29,6 +31,7 @@ vim.keymap.set({"i", "s"}, "<Tab>", function()
     return "<Tab>"
   end
 end, { expr = true, silent = true })
+
 
 -- Jump backward
 vim.keymap.set({"i", "s"}, "<S-Tab>", function()
