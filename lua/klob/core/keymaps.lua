@@ -46,5 +46,13 @@ end, { expr = true, silent = true })
 vim.keymap.set("n", "<leader>h", "<C-w>h", { desc = "Left window" })
 vim.keymap.set("n", "<leader>l", "<C-w>l", { desc = "Right window" })
 
+-- Tab creation with prompt name
+vim.keymap.set("n", "<leader>tp", function()
+  local filename = vim.fn.input("New filename: ")
+  if filename ~= "" then
+    vim.cmd("tabnew " .. filename)
+  end
+end, { desc = "New tab (prompt name)" })
+
 -- Quick input file edit
 vim.keymap.set("n", "<leader>i", ":vsplit test<cr>", { desc = "Edit input" })

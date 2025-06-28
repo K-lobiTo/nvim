@@ -22,11 +22,14 @@ return {
   {
     "christoomey/vim-tmux-navigator",  -- Unified window/tmux navigation
     keys = {
-      { "<C-h>", "<cmd>TmuxNavigateLeft<cr>" },
-      { "<C-j>", "<cmd>TmuxNavigateDown<cr>" },
-      { "<C-k>", "<cmd>TmuxNavigateUp<cr>" },
-      { "<C-l>", "<cmd>TmuxNavigateRight<cr>" },
-    }
+      { "<C-h>", "<cmd>TmuxNavigateLeft<cr>", desc = "Left window" },
+      { "<C-j>", "<cmd>TmuxNavigateDown<cr>", desc = "Down window" },
+      { "<C-k>", "<cmd>TmuxNavigateUp<cr>", desc = "Up window" },
+      { "<C-l>", "<cmd>TmuxNavigateRight<cr>", desc = "Right window" },
+      { "<C-n>", "<cmd>tabnew<cr>", desc = "New tab" },
+      { "<C-S-h>", "<cmd>tabprevious<CR>", desc = "Previous tab", mode = {"n", "i"} },
+      { "<C-S-l>", "<cmd>tabnext<CR>", desc = "Next tab", mode = {"n", "i"} },
+      }
   },
 
   -- Auto-resize focused window
@@ -54,7 +57,7 @@ return {
         "--quiet",
         "--template=gcc",       -- Output format Neovim understands
         "--language=c++",
-        "--std=c++17",         -- Match your compilation standard
+        "--std=c++17",         -- Match compilation standard
         vim.fn.expand("%:p")   -- Current file path
       },
       stdin = false,           -- Required for cppcheck
