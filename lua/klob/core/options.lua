@@ -23,6 +23,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 
     vim.cmd("vsplit test | wincmd l")
     vim.cmd("wincmd H")
+    vim.cmd("wincmd l")
     vim.cmd("wincmd h")
     vim.bo.bufhidden = "hide"   -- Keep buffer when hidden
   end
