@@ -4,3 +4,11 @@ Better if nvim is installed with:
 snap install nvim --classic
 ```
 to avoid version incompatibilities 
+
+#dependencies
+```bash<>>
+sudo apt install xclip xsel
+sudo apt install lua5.1 liblua5.1-dev
+sudo apt install luarocks
+sudo apt install cppcheck
+```
