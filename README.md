@@ -1,11 +1,11 @@
-Better if nvim is installed with:
+## Better if nvim is installed with:
 
 ```bash
 snap install nvim --classic
 ```
 to avoid version incompatibilities 
 
-#dependencies
+### Dependencies
 ```bash<>>
 sudo apt install xclip xsel
 sudo apt install lua5.1 liblua5.1-dev
