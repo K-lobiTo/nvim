@@ -127,11 +127,11 @@ ls.add_snippets("cpp", {
           s[x] = s[2*x + 1] + s[2*x + 2];
       }}
 
-      void set(int idx, Mono &m) {{
+      void set(int idx, Mono m) {{
           set(idx, m, 0, 0, n);
       }}
 
-      void set(int idx, Mono &m, int x, int lx, int rx){{
+      void set(int idx, Mono m, int x, int lx, int rx){{
           if(!(lx + 1 < rx)){{
               s[x] = m;
               return;
