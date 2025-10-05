@@ -200,21 +200,21 @@ ls.add_snippets("cpp", {
   s("uF", fmt([[
     struct UnionFind {{
         vector<int> uf;
-        void init(int n) {{ uf.assign(n, -1); }}
+        vector<int> rk;
+        void init(int n) {{ uf.assign(n, -1); rk.assign(n, 0); }}
         UnionFind(int n) {{ init(n); }}
         int Find(int i) {{ return (uf[i] == -1) ? i : uf[i] = Find(uf[i]); }}
-        bool United(int i, int j){{
-            return Find(i) == Find(j);
-        }}
-
+        bool United(int i, int j) {{ return Find(i) == Find(j); }}
         bool Union(int i, int j) {{
-            bool e = United(i, j);
-            if (!e) uf[Find(i)] = Find(j);
-            return e;
+            i = Find(i); j = Find(j);
+            if (i == j) return 0;
+            if (rk[i] < rk[j]) swap(i, j);
+            uf[j] = i;
+            if (rk[i] == rk[j]) rk[i]++;
+            return 1;
         }}
     }};
   ]], {})),
-
 }) 
 
 
