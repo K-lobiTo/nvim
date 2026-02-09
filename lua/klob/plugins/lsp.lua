@@ -17,14 +17,14 @@ local function config()
         vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
         vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
         
-        if client.supports_method("textDocument/formatting") then
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                buffer = bufnr,
-                callback = function()
-                    vim.lsp.buf.format({ bufnr = bufnr })
-                end
-            })
-        end
+        -- if client.supports_method("textDocument/formatting") then
+        --     vim.api.nvim_create_autocmd("BufWritePre", {
+        --         buffer = bufnr,
+        --         callback = function()
+        --             vim.lsp.buf.format({ bufnr = bufnr })
+        --         end
+        --     })
+        -- end
     end
 
     -- Setup clangd for C++
