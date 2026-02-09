@@ -57,7 +57,7 @@ return {
         "--quiet",
         "--template=gcc",       -- Output format Neovim understands
         "--language=c++",
-        "--std=c++17",         -- Match compilation standard
+        "--std=c++23",         -- Match compilation standard
         vim.fn.expand("%:p")   -- Current file path
       },
       stdin = false,           -- Required for cppcheck
