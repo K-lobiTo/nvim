@@ -67,7 +67,7 @@ ls.add_snippets("cpp", {
 
       SegmentTree(int n) : n(n), s(n<<1) {{}}
       SegmentTree(vector<Mono> const& a) : n(a.size()), s(a.size()<<1) {{
-        copy(ALL(a), s.begin() + n);
+        ranges::copy(a, s.begin() + n);
         for (int i = n - 1; i > 0; --i) s[i] = s[i<<1] + s[i<<1|1];
       }}
 
@@ -201,8 +201,7 @@ ls.add_snippets("cpp", {
     struct UnionFind {{
         vector<int> uf;
         vector<int> rk;
-        void init(int n) {{ uf.assign(n, -1); rk.assign(n, 0); }}
-        UnionFind(int n) {{ init(n); }}
+        UnionFind(int n) {{ uf.resize(n); ranges::iota(uf, 0); rk.assign(n, 0); }}
         int Find(int i) {{ return (uf[i] == -1) ? i : uf[i] = Find(uf[i]); }}
         bool United(int i, int j) {{ return Find(i) == Find(j); }}
         bool Union(int i, int j) {{
